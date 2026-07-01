@@ -14,7 +14,8 @@ def water_plant(plant_name: str) -> None:
 def test_watering_system(plant_name: str) -> None:
     print("Opening watering system")
     try:
-        water_plant(plant_name)
+        for n in plant_name:
+            water_plant(n)
     except PlantError as e:
         print(f"Caught PlantError: {e}")
         print(".. ending tests and returning to main")
@@ -28,15 +29,14 @@ def main() -> None:
     print()
     print("Testing valid plants...")
     plant_name = ["Tomato", "Lettuce", "Carrots"]
-    for n in plant_name:
-        test_watering_system(n)
+    test_watering_system(plant_name)
     print()
     print("Testing valid plants...")
     print("Testing invalid plants...")
     plant_name = ["Tomato", "lettuce", "Carrots"]
+    test_watering_system(plant_name)
+    print()
     print("Cleanup always happens, even with errors!")
-    for n in plant_name:
-        test_watering_system(n)
 
 
 if __name__ == "__main__":
