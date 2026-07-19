@@ -6,15 +6,15 @@ class PlantError(Exception):
 
 def water_plant(plant_name: str) -> None:
     if (plant_name == plant_name.capitalize()):
-        print(f"watering {plant_name}: [OK]")
+        print(f"Watering {plant_name}: [OK]")
     else:
         raise PlantError(f"Invalid plant name to water: '{plant_name}'")
 
 
-def test_watering_system(plant_name: str) -> None:
+def test_watering_system(plants: list[str]) -> None:
     print("Opening watering system")
     try:
-        for n in plant_name:
+        for n in plants:
             water_plant(n)
     except PlantError as e:
         print(f"Caught PlantError: {e}")
@@ -31,7 +31,6 @@ def main() -> None:
     plant_name = ["Tomato", "Lettuce", "Carrots"]
     test_watering_system(plant_name)
     print()
-    print("Testing valid plants...")
     print("Testing invalid plants...")
     plant_name = ["Tomato", "lettuce", "Carrots"]
     test_watering_system(plant_name)

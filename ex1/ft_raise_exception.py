@@ -9,12 +9,12 @@ def input_temperature(temp_str: str) -> int:
 
 
 def test_temperature() -> None:
-    value = ["25", "abc", "-50", "100"]
+    value = ["25", "abc", "100", "-50"]
     for n in value:
-        print(f"input data is '{n}")
+        print(f"input data is '{n}'")
         try:
             new_value = input_temperature(n)
-            print(f"Temperature is now{new_value}")
+            print(f"Temperature is now {new_value}°C")
             print()
         except ValueError as e:
             print(f"Caught input_temperature error: {e}")

@@ -1,4 +1,4 @@
-def input_temperature(temp_str: str) -> int:
+def input_temperature(temp_str: str) -> int | None:
     temp_int = int(temp_str)
     if (temp_int < 0):
         print("Caught input_temperature error: "
@@ -7,9 +7,10 @@ def input_temperature(temp_str: str) -> int:
         print()
     else:
         return temp_int
+    return None
 
 
-def test_temperature():
+def test_temperature() -> None:
     value = "25"
     print(f"Input data is '{value}'")
 
