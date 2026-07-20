@@ -25,7 +25,7 @@ def test() -> None:
         print()
     print("Testing WaterError...")
     try:
-        raise WaterError(" Not enough water in the tank!")
+        raise WaterError("Not enough water in the tank!")
     except WaterError as e:
         print(f"Caught WaterError: {e}")
         print()
