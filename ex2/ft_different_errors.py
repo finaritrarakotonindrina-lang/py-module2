@@ -6,7 +6,7 @@ def garden_operations(operation_number: int) -> None:
     elif operation_number == 2:
         open('/non/existent/file', 'r')
     elif operation_number == 3:
-        "me" + 45  # type: ignore[operator]
+        "me" + 45
     else:
         print("Operation completed successfully")
 
